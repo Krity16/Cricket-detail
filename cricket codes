@@ -1,0 +1,105 @@
+#include<iostream.h>
+#include<conio.h>
+#include<stdio.h>
+
+struct batting
+{
+char batsman[20];
+int run;
+boolean out;
+int tot_run;
+int overs;
+int total_over;
+int extra;
+};
+
+struct bowling
+{
+char bowler[20];
+int overs;
+int maiden_overs;
+int runs;
+int wicket;
+};
+
+void main()
+{
+batting bat_team[12];
+bowling bo_team[12];
+cout<<"\n Enter records of batting team :\n\n";
+for(int i = o; i < 12 ; i++)
+{
+cout<<"\n Enter bat's man name :";
+gets(bat_team[i].batsman);
+cout<<"\n Enter run scored :";
+cin>>bat_team[i].run;
+cout<<"\n Type 0 NOT-OUT , Type 1 if OUT :";
+cin>>bat_team[i].out;
+cout<<"\n Enter total run :";
+cin>>bat_team[i].total_run;
+cout<<"\n Enter no. of overs played :";
+cin>>bat_team[i].overs;
+cout<<"\n Enter total over:";
+cin>>bat_team[i].total_over;
+cout<<"\n Extra ?";
+cin>>bat_team[i].extra;
+}
+cout<<"\n Enter records of bowling team :\n\n";
+for( i = o; i < 12 ; i++)
+{
+cout<<"\n Enter bowler's name :";
+gets(bo_team[i].bowler);
+cout<<"\n Enter overs bowled :";
+cin>>bo_team[i].overs;
+cout<<"\n Enter maiden overs :";
+cin>>bo_team[i].maiden_overs;
+cout<<"\n Enter runs :";
+cin>>bo_team[i].runs;
+cout<<"\n Enter wicked taken:";
+cin>>bo_team[i].wicket;
+}
+
+char ch;
+int n;
+do
+{
+clrscr();
+cout<<"\n Enter 1 to view batting team information:";
+cout<<"\n Enter 2 to view bowling team information:";
+cout<<"\n Enter your choice :";
+cin>>n;
+switch(n)
+{
+
+case 1:
+cout<<"\n ************* BATTING TEAM *************\n";
+cout<<"\n Name \t RUN-Scored Out Total-run Over's-played Total-Overs Extra ";
+for( i = o; i < 12 ; i++)
+{
+cout<<"\n"<< bat_team[i].batsman <<"\t"<< bat_team[i].run<<" ";
+if(bat_team.out)
+cout<<"OUT";
+else
+cout<<"NOT-OUT";
+cout<< " " <<   bat_team[i].total_run<< " " << bat_team[i].overs << " " << bat_team[i].total_over<<  " "<< bat_team[i].extra;
+}
+break;
+
+case 2:
+
+cout<< "\n ************* BOWLING TEAM *************\n";
+cout<< "\n Name \t Overs_bowled Maiden-Overs Runs-Given Wicket-Taken ";
+for( i = o; i < 12 ; i++)
+{
+cout<<  "\n"<< bo_team[i].bowler<< "\t"<< bo_team[i].overs<< " ";
+cout<< " "<< bo_team[i].maiden_overs<< " "<< bo_team[i].runs<< " "<< bo_team[i].wicket<<" ";
+}
+break;
+default:
+cout<< "\n Wrong choice.";
+}
+cout<<"\n Do you continue (y/n);
+cin>>ch;
+}while(ch=='y' | | ch == 'Y');
+getch();
+}
